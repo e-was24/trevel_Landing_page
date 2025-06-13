@@ -44,13 +44,19 @@ const dataCards = [
   },
   {
     img: "img/mounth.jpg",
-    title: "Bandung",
+    title: "Jawa Barat",
     price: "Rp900.000",
     category: "java"
   },
   {
     img: "img/mounth.jpg",
-    title: "Surabaya",
+    title: "Jawa Tengah",
+    price: "Rp-",
+    category: "java"
+  },
+  {
+    img: "img/mounth.jpg",
+    title: "Jawa Timur",
     price: "Rp800.000",
     category: "java"
   },
