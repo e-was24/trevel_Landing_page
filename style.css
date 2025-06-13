@@ -1,0 +1,327 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background: white;
+    height: 200dvh;
+}
+
+::-webkit-scrollbar {
+    width: 0;
+}
+
+@media (min-width: 1200px) {
+    body {
+        display: none;
+    }
+}
+
+@media (max-width: 768px) {
+
+    body {
+        background: linear-gradient(to bottom, #111 30%, #000333);
+        user-select: none;
+        overflow-x: hidden;
+        -webkit-tap-highlight-color: transparent;
+    }
+
+    /* navbar */
+    .menu {
+        position: fixed;
+        z-index: 1;
+        padding: 5px 10px;
+        border-radius: 5px;
+        border: none;
+        background: transparent;
+        color: white;
+        font-size: 1.2em;
+        cursor: pointer;
+        margin: 0 10px;
+        transform: translateX(0dvw);
+        transition: .3s;
+    }
+
+    .menu.on {
+        transform: translateX(70dvw);
+        background: #333;
+    }
+
+    .nav {
+        display: flex;
+        justify-content: start;
+        align-items: center;
+        flex-direction: column;
+        position: fixed;
+        height: 100dvh;
+        background: #333;
+        width: 75dvw;
+        transform: translateX(-100dvw);
+        transition: .3s;
+        z-index: 99;
+    }
+
+    .nav.active {
+        transform: translateX(0dvw);
+    }
+
+    .nav .title {
+        height: 25dvh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        font-variant: small-caps;
+        color: white;
+        font-style: italic;
+        font-size: 1.2em;
+        font-weight: 500;
+    }
+
+    .nav .title span {
+        color: #9e3df8;
+        font-style: normal;
+        font-size: 1.2em;
+        font-weight: 800;
+    }
+
+    .nav .cover-menu ul {
+        list-style: none;
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        flex-direction: column;
+        height: 50dvh;
+    }
+
+    .nav .cover-menu ul li a {
+        color: white;
+        text-decoration: none;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        font-size: small;
+    }
+
+    /* nabar end */
+
+    /* ads */
+    #ads {
+        display: flex;
+        justify-content: center;
+        height: 100dvh;
+        padding-top: 8dvh;
+        position: relative;
+        z-index: 0;
+    }
+
+    #ads .cover-ads-title {
+        background: url(img/mounth2.jpg);
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        position: absolute;
+        top: 0;
+        height: 50dvh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    #ads .cover-ads-title::after {
+        position: absolute;
+        content: '';
+        background: linear-gradient(to top, #111, transparent);
+        width: 100dvw;
+        height: 20dvh;
+        bottom: 0;
+    }
+
+    #ads .cover-ads-title .ads-title {
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        width: 100dvw;
+        height: fit-content;
+        text-align: center;
+        color: #fff8;
+    }
+
+    #ads #slide {
+        border-radius: 10px;
+        position: absolute;
+        top: 55dvh;
+    }
+
+    /* CTA */
+
+    .CTA {
+        top: 50dvh;
+        position: absolute;
+        display: flex;
+        justify-content: center;
+        align-items: start;
+        flex-direction: column;
+        padding: 10px;
+        width: 90dvw;
+        left: 0;
+        padding: 10px 0 10px 10px;
+        border-radius: 0 50px 50px 0;
+    }
+
+    .CTA p {
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        font-size: .8em;
+        font-variant: small-caps;
+        color: white;
+    }
+
+    #ads button {
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        top: 70%;
+        height: fit-content;
+        padding: 5px 1px;
+        border-radius: 5px 10px;
+        border: none;
+        cursor: pointer;
+
+    }
+
+    #ads button .lanjut {
+        background: transparent;
+        padding: 5px 10px;
+        border-radius: 5px 10px;
+        text-decoration: none;
+        color: blue;
+        cursor: pointer;
+    }
+
+    /* ads end */
+
+    /* prduk */
+    .category {
+        margin-bottom: 2rem;
+    }
+
+    .category h2 {
+        margin-bottom: 1rem;
+        color: white;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        font-size: medium;
+        margin-left: 10px;
+    }
+
+    #card-sumatra,
+    #card-java {
+        display: flex;
+        justify-content: start;
+        align-items: center;
+        gap: 1rem;
+        overflow-x: auto;
+        padding: 8px 5px;
+        /* white-space: nowrap;  <-- gak perlu karena sudah flex */
+
+        /* Styling scrollbar di Firefox */
+        scrollbar-width: thin;
+        scrollbar-color: rgba(0, 0, 0, 0.3) transparent;
+    }
+
+    /* Scrollbar untuk Webkit browsers (Chrome, Edge, Safari) */
+    #card-sumatra::-webkit-scrollbar,
+    #card-java::-webkit-scrollbar {
+        height: 8px;
+        /* tinggi scrollbar horizontal */
+        width: 8px;
+        /* lebar scrollbar vertikal jika ada */
+    }
+
+    /* Hilangkan track background */
+    #card-sumatra::-webkit-scrollbar-track,
+    #card-java::-webkit-scrollbar-track {
+        background: transparent;
+    }
+
+    /* Styling thumb scrollbar */
+
+    #card-sumatra::-webkit-scrollbar-thumb,
+    #card-java::-webkit-scrollbar-thumb {
+        background-color: rgba(0, 0, 0, 0.3);
+        border-radius: 4px;
+    }
+
+    /* **PENTING**: Hilangkan panah scrollbar */
+    #card-sumatra::-webkit-scrollbar-button,
+    #card-java::-webkit-scrollbar-button {
+        display: none !important;
+    }
+
+
+    /* Card style */
+    .card {
+        min-width: 150px;
+        border-radius: 8px;
+        padding: 12px;
+        text-align: center;
+        flex-shrink: 0;
+        cursor: pointer;
+        transition: box-shadow 0.3s ease;
+        background: #000333;
+        ;
+        user-select: none;
+    }
+
+    .card:hover {
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    }
+
+    .card img {
+        width: 100px;
+        border-radius: 8px;
+        margin-bottom: 8px;
+    }
+
+    .card .title-price {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 8px;
+        gap: 8px;
+    }
+
+    .card h3 {
+        margin: 0;
+        flex-shrink: 0;
+        color: white;
+        font-size: medium;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        font-variant: small-caps;
+    }
+
+    .card p.price {
+        opacity: 0;
+        width: 0;
+        margin: 0;
+        overflow: hidden;
+        white-space: nowrap;
+        font-weight: bold;
+        transition: opacity 0.3s ease, width 0.3s ease;
+    }
+
+    .card:hover p.price {
+        opacity: 1;
+        width: auto;
+        margin-left: auto;
+    }
+
+    /* Style untuk price di sebelah judul kategori */
+    .price-inline {
+        color: yellowgreen;
+        /* ganti warna sesuai selera */
+        font-weight: bold;
+        margin-left: 8px;
+    }
+
+
+
+
+    /* produk end */
+}
